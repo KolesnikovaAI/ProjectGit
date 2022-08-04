@@ -5,7 +5,7 @@ class Profile extends Component {
     super(props);
     this.state = {
       value: "",
-      visibility: "hidden",
+      visibility: false, //по умолчанию значение стейта видимости ставим false, т.е. невидимый
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -32,7 +32,7 @@ class Profile extends Component {
       date: user.created_at,
       imgSrc: user.avatar_url,
       repositorList: user.repos_url,
-      visibility: "visible",
+      visibility: true,
     }); //изменяем состояние присваивая значение из user как несколько свойств одного объекта
   }
   render() {
@@ -45,14 +45,14 @@ class Profile extends Component {
           onChange={this.handleChange}
         ></input>
         <input type="submit" value="GO!" onClick={this.handleSubmit}></input>
-        {/* <div style={this.state.visibility}>ID</div> */}
-        <div>ID</div>
+        {this.state.visibility && <div>ID</div>}
+        {/* как только стейт visibility станет true (при нажатии кнопки) строка будет видна */}
         <div>{this.state.id}</div>
-        <div>Дата создания</div>
+        {this.state.visibility && <div>Дата создания</div>}
         <div>{this.state.date}</div>
-        <div>Список репозиториев</div>
+        {this.state.visibility && <div>Список репозиториев</div>}
         <a href={this.state.repositorList}>{this.state.repositorList}</a>
-        <div>Аватар</div>
+        {this.state.visibility && <div>Аватар</div>}
         <img src={this.state.imgSrc}></img>
       </div>
     );

@@ -1,16 +1,29 @@
 import "./App.css";
-import Profile from "./Profile";
+import Header from "./Header";
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Profile from "./Profile";
+import About from "./About";
+import Users from "./Users";
 
 const App = (props) => {
   return (
-    // <BrowserRouter>
-    //   <div>
-    //     <Route path = '/profile' component = {Profile}/>
-    //   </div>
-    // </BrowserRouter>
-    <Profile />
+    <div>
+      <Header />
+
+      <Router>
+        {/* <nav>
+          <li><Link to = '/'>Main</Link></li>
+          <li><Link to = '/about'>About</Link></li>
+          <li><Link to = '/users'>Users</Link></li>
+        </nav> */}
+        <Routes>
+          <Route exact path="/" element={<Profile />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/users" element={<Users />} />
+        </Routes>
+      </Router>
+    </div>
   );
 };
 export default App;
