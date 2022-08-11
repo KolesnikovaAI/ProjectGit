@@ -18,7 +18,7 @@ const App = (props) => {
           <li><Link to = '/users'>Users</Link></li>
         </nav> */}
         <Routes>
-          <Route exact path="/" element={<Profile />} />
+          <Route path="/" element={<Profile title ='Поиск информации о GitHub пользователе'/>} />
           <Route path="/about" element={<About />} />
           <Route path="/users" element={<Users />} />
         </Routes>
