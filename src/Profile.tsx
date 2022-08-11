@@ -34,7 +34,7 @@ class Profile extends Component <TypeProps, TypeStates> {
     this.setState({ value: event.target.value }); //меняем состояние value, получая значение из инпута
   }
 
-  getUser(login) {
+  getUser(login:string) {
     //функция, возвращающая промис с объектом пользователя
     return fetch(`https://api.github.com/users/${login}`).then((response) =>
       response.json()

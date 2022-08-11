@@ -6,7 +6,7 @@ import Profile from "./Profile";
 import About from "./About";
 import Users from "./Users";
 
-const App = (props) => {
+const App = () => {
   return (
     <div>
       <Header />
