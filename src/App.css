@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -27,16 +27,41 @@
 .App-link {
   color: #61dafb;
 }
+ */
 
-a {
-color: red;
+ .header ul{
+  width: 300px;
+  margin: 10px ;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+ }
+
+ 
+
+.container {
+  margin: 0 auto;
+  text-align: center;
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container input[type="text"]{
+  width: 500px;
+  margin: 15px;
+}
+
+.container input[type="submit"]{
+  width: 100px;
+  margin: 15px;
+}
+
+.subtitle{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.info{
+  text-align: left;
 }

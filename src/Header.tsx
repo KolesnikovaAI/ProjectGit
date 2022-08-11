@@ -3,7 +3,8 @@ import React from "react";
 export default function Header() {
   return (
     <div>
-      <nav>
+      <nav className="header">
+        <ul  > 
         <li>
           <a href="/">Main</a>
         </li>
@@ -13,6 +14,7 @@ export default function Header() {
         <li>
           <a href="/users">Users</a>
         </li>
+        </ul>
       </nav>
     </div>
   );

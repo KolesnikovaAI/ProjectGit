@@ -51,26 +51,29 @@ class Profile extends Component <TypeProps, TypeStates> {
       repositorList: user.repos_url,
       visibility: true,
     }); //изменяем состояние присваивая значение из user как несколько свойств одного объекта
+    window.location.hash = `${user.login}`
   }
   render() {
     return (
-      <div>
-        <h1>{this.props.title}</h1>
+      <div className = 'container'>
+        <h1 className = 'title'>{this.props.title}</h1>
         <input
           type="text"
           placeholder="Введите GIT"
           onChange={this.handleChange}
         ></input>
         <input type="submit" value="GO!" onClick={this.handleSubmit}></input>
-        {this.state.visibility && <div>ID</div>}
-        {/* как только стейт visibility станет true (при нажатии кнопки) строка будет видна */}
-        <div>{this.state.id}</div>
-        {this.state.visibility && <div>Дата создания</div>}
-        <div>{this.state.date}</div>
-        {this.state.visibility && <div>Список репозиториев</div>}
-        <a href={`https://github.com/${this.state.value}?tab=repositories`}>{this.state.repositorList}</a>
-        {this.state.visibility && <div>Аватар</div>}
-        <img src={this.state.imgSrc}></img>
+        <div className="info">
+          {this.state.visibility && <div className="subtitle">ID</div>}
+          {/* как только стейт visibility станет true (при нажатии кнопки) строка будет видна */}
+          <div>{this.state.id}</div>
+          {this.state.visibility && <div className="subtitle">Дата создания</div>}
+          <div>{this.state.date}</div>
+          {this.state.visibility && <div className="subtitle">Список репозиториев</div>}
+          <a href={`https://github.com/${this.state.value}?tab=repositories`} target = '_blank'>{this.state.repositorList}</a>
+          {this.state.visibility && <div className="subtitle">Аватар</div>}
+          <img src={this.state.imgSrc}></img>
+        </div>
       </div>
     );
   }
