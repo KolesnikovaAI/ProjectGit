@@ -68,7 +68,7 @@ class Profile extends Component <TypeProps, TypeStates> {
         {this.state.visibility && <div>Дата создания</div>}
         <div>{this.state.date}</div>
         {this.state.visibility && <div>Список репозиториев</div>}
-        <a href={this.state.repositorList}>{this.state.repositorList}</a>
+        <a href={`https://github.com/${this.state.value}?tab=repositories`}>{this.state.repositorList}</a>
         {this.state.visibility && <div>Аватар</div>}
         <img src={this.state.imgSrc}></img>
       </div>
