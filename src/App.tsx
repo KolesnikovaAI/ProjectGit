@@ -9,16 +9,12 @@ import Users from "./Users";
 const App = () => {
   return (
     <div>
-      <Header />
+      
 
       <Router>
-        {/* <nav>
-          <li><Link to = '/'>Main</Link></li>
-          <li><Link to = '/about'>About</Link></li>
-          <li><Link to = '/users'>Users</Link></li>
-        </nav> */}
+        <Header />
         <Routes>
-          <Route path="/" element={<Profile title ='Поиск информации о GitHub пользователе'/>} />
+          <Route path="/" element={<Profile />} />
           <Route path="/about" element={<About />} />
           <Route path="/users" element={<Users />} />
         </Routes>
